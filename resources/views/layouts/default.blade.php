@@ -12,6 +12,7 @@
   <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ asset('css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   @yield('pageCss')
 </head>
@@ -29,7 +30,17 @@
 
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-
+          @if(Session::has('message'))
+                <div class="row">
+                 <div class="col-lg-12">
+                       <div class="alert {{ Session::get('alert-class', 'alert-info') }}">
+                             <button type="button" class="close" data-dismiss="alert">×</button>
+                             {!! Session::get('message') !!}
+                       </div>
+                    </div>
+                </div>
+              @endif
+              
           @yield('main_content')
 
         </div>
