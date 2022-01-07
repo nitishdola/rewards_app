@@ -17,4 +17,9 @@ class Package extends Model
       'name'                => 'required',
       'threshold_amount'    => 'required',
     ];
+
+    public function points()
+    {
+        return $this->hasMany('App\Models\Master\PackagePoint','package_id'); 
+    }
 }

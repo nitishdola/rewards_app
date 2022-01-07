@@ -11,14 +11,16 @@ class PackagePoint extends Model
 
 
     protected $fillable = [
-        'point_from', 
-        'point_to',
+        'package_id',
+        'min_points', 
+        'max_points',
         'percentage',
     ];
 
     public static $rules    = [
-      'point_from'  => 'numeric|required',
-      'point_to'    => 'numeric',
-      'percentage'  => 'numeric|required', 
+        'package_id'        => 'required|exists:packages,id',
+        'min_points'        => 'numeric|required',
+        'max_points'        => 'numeric',
+        'percentage'        => 'numeric|required', 
     ];
 }

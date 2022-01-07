@@ -25,11 +25,9 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">PACKAGE</h6>
         <a class="collapse-item" href="{{ route('admin.package.create') }}">Create</a>
-        <a class="collapse-item" href="buttons.html">Buttons</a>
-        <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
-        <a class="collapse-item" href="modals.html">Modals</a>
-        <a class="collapse-item" href="popovers.html">Popovers</a>
-        <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
+        <a class="collapse-item" href="{{ route('admin.package_points.index') }}">View All Packages</a>
+        <a class="collapse-item" href="{{ route('admin.package_points.create') }}">Create Package Points</a>
+        <a class="collapse-item" href="{{ route('admin.package_points.store') }}">View All Package Points</a>
       </div>
     </div>
   </li>

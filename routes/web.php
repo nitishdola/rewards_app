@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Master\PackagesController;
+use App\Http\Controllers\Master\PackagesPointsController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,15 @@ Route::group(['auth:sanctum', 'verified'], function () {
                 Route::get('package/view-all', [PackagesController::class, 'index'])->name('admin.package.index');
                 Route::get('package', [PackagesController::class, 'create'])->name('admin.package.create');
                 Route::post('package/save', [PackagesController::class, 'store'])->name('admin.package.store');
+
+                Route::group(['prefix' => 'points'], function() {
+                    Route::get('view-all', [PackagesPointsController::class, 'index'])->name('admin.package_points.index');
+                    Route::get('create', [PackagesPointsController::class, 'create'])->name('admin.package_points.create');
+                    Route::post('save', [PackagesPointsController::class, 'store'])->name('admin.package_points.store');
+                });
             });
+
+
         });
     });
 });

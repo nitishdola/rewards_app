@@ -28,7 +28,7 @@
               <td>{{ $v->name }}</td>
               <td>{{ $v->threshold_amount }}</td>
               <td>{{ $v->status ? 'Active': 'Disabled' }}</td>
-              <td><a href="#" class="btn btn-sm btn-primary">View Points Table</a></td>
+              <td><a href="{{ route('admin.package_points.index') }}" class="btn btn-sm btn-primary">View Points Table</a></td>
             </tr>
             @endforeach
           </tbody>
