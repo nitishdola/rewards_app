@@ -16,6 +16,7 @@ class RegistrationController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'username' => 'required|string|digits:10|unique:users',
             'password'      => 'required|string|min:6|confirmed',
+            'user_type'  => 'required|in:USR,AGN'
         ],
         [
             'username.unique'   => 'Mobile number already exists !',
@@ -40,7 +41,38 @@ class RegistrationController extends Controller
                 return response()->json(['success'=>false,'message'=>'Email already exists']);
             }
         }
+       
+        $agent_id = NULL;
+        if($request->user_type == 'AGN') {
+            $agent_id = random_int(100000, 999999);
+        }
+        
+        $profile_photo_path = NULL;
+        if($request->hasFile('profile_photo')){ 
+            $validatedData = $request->validate([
+             'profile_photo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+     
+            ]);
+     
+            $profile_photo_name = 'profile_pic_'.$agent_id.$request->username;//$request->file('profile_photo')->getClientOriginalName();
+     
+            $profile_photo_path = $request->file('profile_photo')->store('public/agents/images/profile_photo');
+     
+        }
 
+
+        $id_proof_path = NULL;
+        if($request->hasFile('id_proof')){ 
+            $validatedData = $request->validate([
+             'id_proof' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+     
+            ]);
+     
+            $id_proof_name = 'id_proof_'.$agent_id.$request->username;//$request->file('id_proof')->getClientOriginalName();
+     
+            $id_proof_path = $request->file('id_proof')->store('public/agents/images/id_proof');
+     
+        }
         
 
         User::where([['username',$request->username],['otp_verified','!=',null],['is_active',0]])->orWhere([['username',$request->username],['otp_verified','=',null],['is_active',0]])->delete();
@@ -51,16 +83,16 @@ class RegistrationController extends Controller
                 'referral_code' => $request->get('referral_code'),
                 'password' => Hash::make($request->get('password')),
                 'otp'   => $otp,
-                'user_type' => 'USR'
+                'user_type' => $request->get('user_type'),
+                'is_active' => 0,
+                'profile_photo_path' => $profile_photo_path,
+                'id_proof_path' => $id_proof_path,
             ]);
-
-            
-
             
             
             DB::commit();
             //Helper::sendSMS($request->username,$otp);
-            return response()->json(['success'=>true,'msg'=>'OTP sent succesfully','customer_details'=>$user->username]);
+            return response()->json(['success'=>true,'message'=>'OTP sent succesfully','customer_details'=>$user->username]);
             
 
     }
@@ -129,6 +161,7 @@ class RegistrationController extends Controller
             }
         
     }
+
 
     
 }

@@ -14,7 +14,7 @@
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
         <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
         @else
-        <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+        
         @endif
         <span class="ml-2 d-none d-lg-inline text-white small">
           

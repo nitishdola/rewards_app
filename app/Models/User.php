@@ -33,6 +33,21 @@ class User extends Authenticatable
         'added_by_agent_user_id',
         'email',
         'password',
+        'user_type',
+        'city',
+        'state',
+        'id_proof_path',
+        'profile_photo_path',
+        'agend_id',
+        'otp',
+        'is_active',
+        'address',
+        'pin',
+        'trade_name',
+        'long',
+        'lat',
+        'shop_photo_path',
+        'gst_no',
     ];
 
     /**

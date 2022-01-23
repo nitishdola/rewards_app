@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Master\PackagesController;
 use App\Http\Controllers\Master\PackagesPointsController;
+use App\Http\Controllers\AgentsController;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::group(['auth:sanctum', 'verified'], function () {
@@ -45,7 +47,35 @@ Route::group(['auth:sanctum', 'verified'], function () {
             });
 
 
+            Route::group(['prefix' => 'agents'], function() {
+                Route::get('view-all', [AgentsController::class, 'index'])->name('admin.agents.index');
+                Route::get('create', [AgentsController::class, 'create'])->name('admin.agents.create');
+                Route::post('save', [AgentsController::class, 'store'])->name('admin.agents.store');
+
+                Route::get('enable/{id}', [AgentsController::class, 'enable'])->name('admin.agent.enable');
+                Route::get('disable/{id}', [AgentsController::class, 'disable'])->name('admin.agent.disable');
+            });
+
+
         });
+
+
+        /*Route::get('storage/{filename}', function ($filename)
+        {
+            $path = storage_path('public/' . $filename);
+
+            if (!File::exists($path)) {
+                abort(404);
+            }
+
+            $file = File::get($path);
+            $type = File::mimeType($path);
+
+            $response = Response::make($file, 200);
+            $response->header("Content-Type", $type);
+
+            return $response;
+        });*/
     });
 });
 

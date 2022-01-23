@@ -15,4 +15,5 @@ class HomeController extends Controller
         if(!Auth::user()->user_type === 'ADM') return 'ERROR';
         return view('admin.dashboard');
     }
+
 }

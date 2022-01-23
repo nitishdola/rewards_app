@@ -7,7 +7,7 @@ use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Models\User;
-
+use App\Http\Controllers\AgentsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,7 +21,7 @@ use App\Models\User;
 
 
 Route::group(['prefix' => 'user'], function() {
-    Route::post('regisration', [RegistrationController::class, 'registerUser']);
+    Route::post('registration', [RegistrationController::class, 'registerUser']);
     Route::post('verify_otp', [RegistrationController::class, 'otpVerify']);
     Route::post('login', [AuthController::class, 'login']);
 });
@@ -33,7 +33,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         return auth()->user();
     });
 
+
+    Route::post('/add-vendor', [AgentsController::class, 'addVendor']);
+    Route::post('/add-consumer', [AgentsController::class, 'addConsumer']);
+
     Route::post('logout', [AuthController::class, 'logout']);
 
     Route::post('/fcm-update', [ProfileController::class, 'updateFCM']);
+    Route::get('/dashboard-agent', [AgentsController::class, 'agentDashboard']);
 });
