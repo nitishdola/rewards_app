@@ -44,10 +44,11 @@ class User extends Authenticatable
         'address',
         'pin',
         'trade_name',
-        'long',
+        'lng',
         'lat',
         'shop_photo_path',
         'gst_no',
+        'package_id',
     ];
 
     /**

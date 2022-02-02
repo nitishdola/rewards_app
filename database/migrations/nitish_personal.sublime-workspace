@@ -1,0 +1,317 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"request"
+			],
+			[
+				"passwo",
+				"password"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/dev/laragon/www/jaaproject/.env",
+			"settings":
+			{
+				"buffer_size": 967,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					7,
+					2,
+					"left_delete",
+					null,
+					"AgAAAN0AAAAAAAAA3QAAAAAAAABAAAAAI0RCX0RBVEFCQVNFPWphYV9kYjIKI0RCX1VTRVJOQU1FPXJvb3QKI0RCX1BBU1NXT1JEPUphY3VzZXJAMjAyMdwAAAAAAAAA3AAAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAAHQEAAAAAAADdAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"paste",
+					null,
+					"AQAAABIBAAAAAAAAIQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAEgEAAAAAAAASAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					26,
+					1,
+					"paste",
+					null,
+					"AgAAABIBAAAAAAAAIgEAAAAAAAAAAAAAIgEAAAAAAAAiAQAAAAAAAA8AAABXNVMpVUNENG5pUlddN3M",
+					"AQAAAAAAAAABAAAAEgEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "/D/dev/laragon/www/jaaproject/config/database.php",
+			"settings":
+			{
+				"buffer_size": 5054,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/dev/laragon/www/jaaproject",
+		"/D/dev/laragon/www/jaaproject/config"
+	],
+	"file_history":
+	[
+		"/D/dev/laragon/www/lwhatsapp/database/factories/OrderFactory.php",
+		"/D/dev/laragon/www/lwhatsapp/routes/web.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Http/Controllers/OrderController.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Channels/Messages/WhatsAppMessage.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Channels/WhatsAppChannel.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Models/User.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Notifications/OrderProcessed.php",
+		"/D/dev/laragon/www/lwhatsapp/.env",
+		"/D/dev/laragon/www/reward_app/routes/web.php",
+		"/D/dev/laragon/www/lwhatsapp/resources/views/home.blade.php",
+		"/D/dev/laragon/www/lwhatsapp/config/services.php",
+		"/D/dev/laragon/www/lwhatsapp/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/D/dev/laragon/www/lwhatsapp/database/migrations/2022_02_01_065908_create_orders_table.php",
+		"/D/dev/laragon/www/lwhatsapp/resources/views/auth/register.blade.php",
+		"/D/dev/laragon/www/lwhatsapp/app/Http/Controllers/Auth/RegisterController.php",
+		"/D/dev/laragon/www/lwhatsapp/resources/views/layouts/app.blade.php",
+		"/D/dev/laragon/www/lwhatsapp/public/css/app.css",
+		"/D/dev/laragon/www/sdwh/routes/web.php",
+		"/D/dev/laragon/www/reward_app/database/migrations/2022_01_23_162447_add_trade_info.php",
+		"/D/dev/laragon/www/reward_app/app/Models/User.php",
+		"/D/dev/laragon/www/reward_app/routes/channels.php",
+		"/D/dev/laragon/www/reward_app/routes/api.php",
+		"/D/dev/laragon/www/reward_app/app/Http/Controllers/AgentsController.php",
+		"/D/dev/laragon/www/reward_app/app/Http/Kernel.php",
+		"/D/dev/laragon/www/reward_app/app/Http/Controllers/Auth/RegistrationController.php",
+		"/D/dev/laragon/www/reward_app/.env",
+		"/D/dev/laragon/www/reward_app/composer.json",
+		"/D/dev/laragon/www/reward_app/config/jetstream.php",
+		"/D/dev/laragon/www/reward_app/app/Providers/JetstreamServiceProvider.php",
+		"/D/dev/laragon/www/reward_app/app/Http/Controllers/Auth/AuthController.php"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/dev/laragon/www/jaaproject/.env",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/dev/laragon/www/jaaproject/config/database.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1806,
+								1811
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 597.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nitish_personal.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 299.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

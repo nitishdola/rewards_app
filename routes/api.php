@@ -8,6 +8,10 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Models\User;
 use App\Http\Controllers\AgentsController;
+
+use App\Http\Controllers\Master\PackagesController;
+use App\Http\Controllers\Master\PackagesPointsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +23,9 @@ use App\Http\Controllers\AgentsController;
 |
 */
 
+
+Route::get('/view-all-packages', [PackagesController::class, 'apiViewAllPackages']);
+Route::get('/view-all-package-points', [PackagesPointsController::class, 'apiViewAllPackagePoints']);
 
 Route::group(['prefix' => 'user'], function() {
     Route::post('registration', [RegistrationController::class, 'registerUser']);
@@ -41,4 +48,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post('/fcm-update', [ProfileController::class, 'updateFCM']);
     Route::get('/dashboard-agent', [AgentsController::class, 'agentDashboard']);
+
+    Route::group(['prefix' => 'agent'], function() {
+        Route::group(['prefix' => 'search'], function() {
+            Route::get('/user', [AgentsController::class, 'search_vendor']);
+        });
+    });
 });

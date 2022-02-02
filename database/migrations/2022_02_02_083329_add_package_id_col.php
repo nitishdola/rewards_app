@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTradeInfo extends Migration
+class AddPackageIdCol extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddTradeInfo extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('trade_name')->nullable()->after('name');
-            $table->string('lng')->nullable()->after('trade_name');
-            $table->string('lat')->nullable()->after('long');
+            $table->integer('package_id', false, true)->after('agend_id')->nullable();
         });
     }
 
@@ -28,7 +26,7 @@ class AddTradeInfo extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            
+            //
         });
     }
 }

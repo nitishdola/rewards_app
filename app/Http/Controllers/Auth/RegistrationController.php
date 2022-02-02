@@ -12,11 +12,11 @@ class RegistrationController extends Controller
 
     public function registerUser(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'username' => 'required|string|digits:10|unique:users',
+            'name'          => 'required|string|max:255',
+            'email'         => 'required|string|email|max:255|unique:users',
+            'username'      => 'required|string|digits:10|unique:users',
             'password'      => 'required|string|min:6|confirmed',
-            'user_type'  => 'required|in:USR,AGN'
+            'user_type'     => 'required|in:USR,AGN'
         ],
         [
             'username.unique'   => 'Mobile number already exists !',
@@ -29,7 +29,12 @@ class RegistrationController extends Controller
         //$otp = 123456;
         DB::beginTransaction();
 
-        $customerPhoneExist = User::where([['username',$request->username],['otp_verified','!=',null],['is_active',1]])->first();
+        $customerPhoneExist = User::where(
+                [
+                    ['username',$request->username],
+                    ['otp_verified','!=',null],
+                    ['is_active',1]
+                ])->first();
         if($customerPhoneExist != null){
             return response()->json(['success'=>false,'message'=>'Mobile number already exists']);
         }
@@ -87,6 +92,8 @@ class RegistrationController extends Controller
                 'is_active' => 0,
                 'profile_photo_path' => $profile_photo_path,
                 'id_proof_path' => $id_proof_path,
+
+                'package_id'    => $request->get('package_id'),
             ]);
             
             

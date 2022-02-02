@@ -454,7 +454,28 @@ class AgentsController extends Controller
 
 
     public function search_vendor(Request $request) {
+        $data = User::where('added_by_agent_user_id', auth()->user()->id);
+
+        if($request->date_from) {
+            $date_from = date('Y-m-d', strtotime($request->date_from));
+            $data = $data->whereDate('created_at', '>=', $date_from);
+        }
+
+        if($request->date_to) {
+            $date_to = date('Y-m-d', strtotime($request->date_to));
+            $data = $data->whereDate('created_at', '<=', $date_to);
+        }
+
+        if($request->user_type) {
+            $data = $data->where('user_type', $request->user_type);
+        }
+
+        if($request->show_default_page == 'yes') {
+            return $data->limit(10)->orderBy('created_at', 'DESC')->get();
+        }
+
         
+        return $data->orderBy('created_at', 'DESC')->get();
     }
 
     public function agentDashboard(Request $request) {

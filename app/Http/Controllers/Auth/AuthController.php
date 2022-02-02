@@ -19,6 +19,8 @@ class AuthController extends Controller
             'password'      => 'required',
         ]);
 
+        
+
         if (!Auth::attempt($attr)) {
             /*return $this->error('Credentials not match', 401);*/
             return response()->json([

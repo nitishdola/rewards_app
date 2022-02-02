@@ -29,4 +29,13 @@ class PackagesPointsController extends Controller
         if(PackagePoint::create($data)) 
             return Redirect::route('admin.package_points.index')->with(['message' => 'Package point added successfully !', 'alert-class' => 'alert-success']);
     }
+
+    public function apiViewAllPackagePoints(Request $request) {
+        $where = [];
+        if($request->package_id) {
+            $where['id'] = $request->package_id;
+        }
+        
+        return Package::with('points')->where($where)->get();
+    }
 }

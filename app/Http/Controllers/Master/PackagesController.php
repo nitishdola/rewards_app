@@ -28,4 +28,8 @@ class PackagesController extends Controller
         if(Package::create($data)) 
             return Redirect::route('admin.package.index')->with(['message' => 'Package added successfully !', 'alert-class' => 'alert-success']);
     }
+
+    public function apiViewAllPackages(Request $request) {
+        return Package::select('id','name','threshold_amount')->where('status',1)->get();
+    }
 }
